@@ -34,34 +34,30 @@ func main() {
 		n = int(b[0]-48)
 
 		for i := 1; i < len(b); i++ {
-			// skip space and ;
-			if b[i] == 32 || b[i] == 59 {
-				continue
-			}
-
-			// check if rune is between 0 and 9
-			if b[i] > 47 && b[i] < 58 {
+			switch {
+			case b[i] > 47 && b[i] < 58: // between 0 and 9
 				if b[i-1] > 47 && b[i-1] < 58 {
-					n = n*10 + int(b[i]-48)   // 2 digit number
+					n = n*10 + int(b[i]-48) // 2 digit number
 				} else {
-					n = int(b[i]-48)          // 1 digit number
+					n = int(b[i]-48) // 1 digit number
 				}
 				continue
-			}
-
-			if b[i] == 114 {
+		
+			case b[i] == 114: // 'r'
 				if n > redCube {
 					possibleConfig = false
 					break
 				}
 				i += 4
-			} else if b[i] == 103 {
+		
+			case b[i] == 103: // 'g'
 				if n > greenCube {
 					possibleConfig = false
 					break
 				}
 				i += 6
-			} else if b[i] == 98 {
+		
+			case b[i] == 98: // 'b'
 				if n > blueCube {
 					possibleConfig = false
 					break

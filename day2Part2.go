@@ -11,7 +11,7 @@ func SolutionDay2Part2() {
 	result := 0
 	n := 0
 
-	f, err := os.Open("inputDay2.txt")
+	f, err := os.Open("./inputs/day2.txt")
 
 	if err != nil {
 		return

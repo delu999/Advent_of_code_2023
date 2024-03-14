@@ -8,7 +8,7 @@ import (
 
 func SolutionDay1() {
 	result := 0
-	f, err := os.Open("inputDay1.txt")
+	f, err := os.Open("./inputs/day1.txt")
 
 	if err != nil {
 		return

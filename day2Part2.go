@@ -1,4 +1,4 @@
-package main
+package solutions
 
 import (
 	"bufio"
@@ -7,11 +7,11 @@ import (
 	"strings"
 )
 
-func main() {
+func SolutionDay2Part2() {
 	result := 0
 	n := 0
 
-	f, err := os.Open("input")
+	f, err := os.Open("inputDay2.txt")
 
 	if err != nil {
 		return
